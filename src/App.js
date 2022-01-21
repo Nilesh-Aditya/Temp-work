@@ -4,6 +4,16 @@ import './assets/css/main.css';
 import { Link } from "react-router-dom";
 
 function App() {
+
+	const toggleClick = (e) => {
+		console.log('click');
+		e.preventDefault();
+		e.stopPropagation();
+
+		const sidebar = document.querySelector('#sidebar');
+		sidebar.classList.toggle('inactive');
+	}
+
 	return (
 		<>
 			<div className='bcover is-preload'>
@@ -190,7 +200,9 @@ function App() {
 					</footer>
 			</div>
 			{/* <Link to='/' className="toggle"> Toggle </Link> */}
-				<a href="#sidebar" className = "toggle">Toggle</a>
+				<a href="#sidebar" className = "toggle"
+					onClick={(e) => {toggleClick(e);}}
+				>Toggle</a>
 		</div>
 
 	</div>

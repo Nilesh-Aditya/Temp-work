@@ -90,9 +90,8 @@
 
 		// Toggle.
 			$('.toggle')
-				// .appendTo($sidebar)
-				.on('click', function(event) {
-
+				.click(function(event) {
+					console.log('click');
 					// Prevent default.
 						event.preventDefault();
 						event.stopPropagation();
